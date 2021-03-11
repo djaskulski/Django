@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Item</h1>
+<h2>{{ object.title }}</h2>
+<h3>{{ object.description }}</h3>
+<h4>{{ object.price }}</h4>
+<h5>{% if object.summary != '' %}{{ object.summary }}{% else %}There is not any summary{% endif %}</h5>
+{% endblock %}

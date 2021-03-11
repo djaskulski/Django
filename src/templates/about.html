@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Hello in About</h1>
+<h2>{{ request.user }}</h2>
+<h3>{{ title|capfirst|title }}</h3>
+<h4>{{ my_number }}</h4>
+
+{{ my_html|safe }}
+{{ my_html|striptags }}
+
+<p>
+    {{ my_list }}
+</p>
+
+<ul>For loop through list
+    {% for item in my_list %}
+        {% if item == "Ola" %}
+            <li>{{ forloop.counter }} - {{ "Love you "|add:item }}</li>
+        {% elif item == "Kasia" %}
+            <li>{{ forloop.counter }} - {{ "Cześć "|add:item }}</li>
+        {% else %}
+            <li>{{ forloop.counter }} - {{ item }}</li>
+        {% endif %}
+    {% endfor %}
+</ul>
+
+<p>This is a tamplate</p>
+{% endblock %}
