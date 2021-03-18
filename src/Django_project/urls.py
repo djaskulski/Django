@@ -16,16 +16,29 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from pages.views import mindfulness_view, minimalism_view, recycling_view, vegetarianism_view, yoga_view, \
-    contact_view, about_view
-
-from mindfulness.views import product_detail_view, product_create_view
+from pages.views import (
+    mindfulness_view,
+    minimalism_view,
+    recycling_view,
+    vegetarianism_view,
+    yoga_view,
+    contact_view,
+    about_view
+    )
+from mindfulness.views import (
+    product_detail_view,
+    product_create_view,
+    dynamic_lookup_view,
+    product_delete_view
+    )
 
 urlpatterns = [
     path('', about_view, name='about'),
 
     path('mindfulness/', mindfulness_view, name='mindfulness'),
-    path('product/', product_detail_view),
+    path('products/', product_detail_view),
+    path('products/<int:id>/', dynamic_lookup_view),
+    path('products/<int:id>/delete/', product_delete_view, name='product-delete'),
     path('create/', product_create_view),
 
     path('minimalism/', minimalism_view, name='minimalism'),
