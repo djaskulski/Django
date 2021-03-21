@@ -24,6 +24,7 @@ class ProductForm(forms.ModelForm):
             'description',
             'price'
         ]
+
     def clean_title(self, *args, **kwargs):
         title = self.cleaned_data.get('title')
         if not "gold" in title:
@@ -49,18 +50,16 @@ class ProductForm(forms.ModelForm):
         return email
 
 
-
-
 class RawProductForm(forms.Form):
     title = forms.CharField(label='TITLE', widget=forms.TextInput(attrs={"placeholder": "hi you"}))
     description = forms.CharField(required=True,
                                   widget=forms.Textarea(
                                       attrs={
-                                      "placeholder": "say my name",
-                                      "class": "new-class-name",
-                                      "rows": 15,
-                                      "cols": 20
+                                          "placeholder": "say my name",
+                                          "class": "new-class-name",
+                                          "rows": 15,
+                                          "cols": 20
                                       }
-                                    )
+                                  )
                                   )
     price = forms.DecimalField(initial=199.99)

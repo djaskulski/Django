@@ -10,4 +10,4 @@ class Article(models.Model):
     author = models.TextField(blank=True, null=False)
 
     def get_absolute_url(self):
-        return reverse("article-detail", kwargs={"id": self.id})
+        return reverse("articles:article-detail", kwargs={"id": self.id})

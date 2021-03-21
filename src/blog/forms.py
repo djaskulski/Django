@@ -2,7 +2,7 @@ from django import forms
 from .models import Article
 
 
-class ArticleForm(forms.ModelForm):
+class ArticleModelForm(forms.ModelForm):
     title = forms.CharField(label='TITLE', widget=forms.TextInput(attrs={"placeholder": "Your title"}))
     description = forms.CharField(required=True,
                                   widget=forms.Textarea(
@@ -34,29 +34,29 @@ class ArticleForm(forms.ModelForm):
             'author'
         ]
 
-    def clean_title(self, *args, **kwargs):
-        title = self.cleaned_data.get('title')
-        if not "gold" in title:
-            raise forms.ValidationError("This is not a gold product")
-        if not "silver" in title:
-            raise forms.ValidationError("This is not a silver product")
-        return title
-
-    def clean_description(self, *args, **kwargs):
-        description = self.cleaned_data.get('description')
-        if not "Producted in" in description:
-            raise forms.ValidationError("This is not 'Producted in")
-        if not "Composition" in description:
-            raise forms.ValidationError("This is not 'Composition'")
-        return description
-
-    def clean_email(self, *args, **kwargs):
-        email = self.cleaned_data.get('email')
-        if not email.endswith(".com"):
-            raise forms.ValidationError("Do not forgot .com")
-        if not "edu" in email:
-            raise forms.ValidationError("Please use your student's email")
-        return email
+    # def clean_title(self, *args, **kwargs):
+    #     title = self.cleaned_data.get('title')
+    #     if not "gold" in title:
+    #         raise forms.ValidationError("This is not a gold product")
+    #     if not "silver" in title:
+    #         raise forms.ValidationError("This is not a silver product")
+    #     return title
+    #
+    # def clean_description(self, *args, **kwargs):
+    #     description = self.cleaned_data.get('description')
+    #     if not "Producted in" in description:
+    #         raise forms.ValidationError("This is not 'Producted in")
+    #     if not "Composition" in description:
+    #         raise forms.ValidationError("This is not 'Composition'")
+    #     return description
+    #
+    # def clean_author(self, *args, **kwargs):
+    #     author = self.cleaned_data.get('author')
+    #     # if not email.endswith(".com"):
+    #     #     raise forms.ValidationError("Do not forgot .com")
+    #     # if not "edu" in email:
+    #     #     raise forms.ValidationError("Please use your student's email")
+    #     return author
 
 
 # class RawProductForm(forms.Form):
