@@ -9,28 +9,10 @@ def mindfulness_view(request, *args, **kwargs):
     return render(request, "mindfulness.html", {})
 
 
-def minimalism_view(request, *args, **kwargs):
+def blog_view(request, *args, **kwargs):
     print(request.user)
     print(args, kwargs)
-    return render(request, "minimalism.html", {})
-
-
-def recycling_view(request, *args, **kwargs):
-    print(request.user)
-    print(args, kwargs)
-    return render(request, "recycling.html", {})
-
-
-def vegetarianism_view(request, *args, **kwargs):
-    print(request.user)
-    print(args, kwargs)
-    return render(request, "vegetarianism.html", {})
-
-
-def yoga_view(request, *args, **kwargs):
-    print(request.user)
-    print(args, kwargs)
-    return render(request, "yoga.html", {})
+    return render(request, "blog.html", {})
 
 
 def contact_view(request, *args, **kwargs):
@@ -39,7 +21,7 @@ def contact_view(request, *args, **kwargs):
     return render(request, "contact.html", {})
 
 
-def about_view(request, *args, **kwargs):
+def about_view(request):
     my_context = {
         "title": "this is about us",
         "my_number": "661389770",

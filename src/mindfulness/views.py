@@ -27,7 +27,7 @@ def product_list_view(request):
 def product_create_view(request):
     initial_data = {
         'title': "Gold title of your choice",
-        'description': "Producted in: Composition:",
+        'description': "Produced in: Composition:",
         'email': "your_mail@edu.com"
     }
     form = ProductForm(request.POST or None, initial=initial_data)

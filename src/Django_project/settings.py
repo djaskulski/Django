@@ -41,10 +41,7 @@ INSTALLED_APPS = [
     # own apps:
     'pages',
     'mindfulness',
-    'minimalism',
-    'recycling',
-    'vegetarianism',
-    'yoga',
+    'blog'
 ]
 
 MIDDLEWARE = [

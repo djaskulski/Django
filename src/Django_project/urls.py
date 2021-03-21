@@ -14,37 +14,19 @@ Including another URL conf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 
 from pages.views import (
     mindfulness_view,
-    minimalism_view,
-    recycling_view,
-    vegetarianism_view,
-    yoga_view,
     contact_view,
     about_view
 )
-from mindfulness.views import (
-    product_detail_view,
-    product_create_view,
-    product_delete_view,
-    product_list_view,
-)
 
 urlpatterns = [
+    path('products/', include('mindfulness.urls')),
+    path('articles/', include('blog.urls')),
     path('', about_view, name='about'),
-
-    path('products/', product_list_view, name='product-list'),
-    path('products/<int:id>/', product_detail_view, name='product-detail'),
-    path('products/<int:id>/delete/', product_delete_view, name='product-delete'),
-    path('create/', product_create_view, name='product-create'),
-
     path('mindfulness/', mindfulness_view, name='mindfulness'),
-    path('minimalism/', minimalism_view, name='minimalism'),
-    path('recycling/', recycling_view, name='recycling'),
-    path('vegetarianism/', vegetarianism_view, name='vegetarianism'),
-    path('yoga/', yoga_view, name='yoga'),
     path('contact/', contact_view, name='contact'),
     path('admin/', admin.site.urls),
 ]
