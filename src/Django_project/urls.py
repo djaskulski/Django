@@ -25,6 +25,8 @@ from pages.views import (
 urlpatterns = [
     path('products/', include('mindfulness.urls')),
     path('articles/', include('blog.urls')),
+    path('polls/', include('polls.urls')),
+
     path('', about_view, name='about'),
     path('mindfulness/', mindfulness_view, name='mindfulness'),
     path('contact/', contact_view, name='contact'),

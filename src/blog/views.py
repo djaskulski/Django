@@ -10,6 +10,7 @@ from django.views.generic import (
 from .models import Article
 from .forms import ArticleModelForm
 
+
 # Create your views here.
 
 
@@ -53,6 +54,7 @@ class ArticleDeleteView(DeleteView):
 
 class ArticleDetailView(DetailView):
     template_name = 'articles/article_detail.html'
+
     # queryset = Article.objects.all()
 
     def get_object(self):
@@ -63,7 +65,6 @@ class ArticleDetailView(DetailView):
 class ArticleListView(ListView):
     template_name = 'articles/article_list.html'
     queryset = Article.objects.all()  # <blog>/<modelname>_list.html
-
 
 # def article_detail_view(request, id):
 #     obj = get_object_or_404(Article, id=id)

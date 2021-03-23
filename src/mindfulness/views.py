@@ -4,12 +4,22 @@ from .forms import ProductForm, RawProductForm
 
 
 # Create your views here.
+# class MindfulnessView(View):
+#     template_name = "products/product_list.html"
+#
+#     def get(self, request, id=None, *args, **kwargs):
+#         queryset = Product.objects.all()  # list of objects
+#         context = {
+#             'object_list': queryset,
+#         }
+#         return render(request, self.template_name, context)
+#
+#     # def post(self, request, *args, **kwargs):
+#     #     return render(request, "products/product_list.html", {})
+#
+
 def product_detail_view(request, id):
     obj = get_object_or_404(Product, id=id)
-    # try:
-    #     obj = Product.objects.get(id=id)
-    # except Product.DoesNotExist:
-    #     raise Http404
     context = {
         "object": obj
     }
