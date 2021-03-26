@@ -3,7 +3,9 @@ from .views import (
     PollDetailView,
     PollListView,
     # MyListView,
-    PollCreateView
+    PollCreateView,
+    PollUpdateView,
+    PollDeleteView
     # my_fbv
 )
 
@@ -14,7 +16,7 @@ urlpatterns = [
 
     path('create/', PollCreateView.as_view(), name='polls-create'),
     path('<int:id>/', PollDetailView.as_view(), name='polls-detail'),
-    # path('<int:id>/update/', <>, name='polls-delete'),
-    # path('<int:id>/delete/', <>, name='polls-delete')
+    path('<int:id>/update/', PollUpdateView.as_view(), name='polls-update'),
+    path('<int:id>/delete/', PollDeleteView.as_view(), name='polls-delete')
 
 ]
