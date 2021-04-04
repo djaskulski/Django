@@ -9,14 +9,14 @@ Now:
 basic models, html templates, forms and views (CRUD)
 
 Soon:
-Responsive nav-bar, Search function, Articles/Products sorting, Login function, Comment section, Tests
+responsive nav-bar, search function, Articles/Products sorting, login function, comment section, tests
 
 
 
 Requirements
 ------------
 Pycharm IDE is useful.
-Python==3.8.0
+Python==3.8.5
 
 src/requirements.txt
 asgiref    3.3.1
