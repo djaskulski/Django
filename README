@@ -6,40 +6,32 @@ It is my first steps in Django framework. It will be contain mostly backend and 
 I am planning to build blog/products review platform with content about Mindfulness, Minimalism, Vegetarianism, Recycling and Yoga.
 
 Now:
-basic models,
-html templates,
-forms and views (CRUD)
-
+basic models, html templates, forms and views (CRUD)
 
 Soon:
-Responsive nav-bar,
-Search function,
-Articles/Products sorting,
-Login function,
-Comment section,
-Tests
+Responsive nav-bar, Search function, Articles/Products sorting, Login function, Comment section, Tests
 
 
 
 Requirements
 ------------
-Pycharm IDE is useful.\
+Pycharm IDE is useful.
 Python==3.8.0
 
-src/requirements.txt\
-asgiref    3.3.1\
-Django     2.1.5\
-pip        21.0.1\
-pytz       2021.1\
-setuptools 54.0.0\
+src/requirements.txt
+asgiref    3.3.1
+Django     2.1.5
+pip        21.0.1
+pytz       2021.1
+setuptools 54.0.0
 sqlparse   0.4.1
 
 
 
 Installation
 ------------
-In cmd:\
-[Create and activate  venv](https://docs.python.org/3.8/library/venv.html)\
+In cmd:
+[Create and activate  venv](https://docs.python.org/3.8/library/venv.html)
 pip install requirements.txt
 
 
@@ -59,7 +51,7 @@ def your_key():
 
 Usage
 -----
-In cmd:\
-cd src/\
-python manage.py runserver\
+In cmd:
+cd src/
+python manage.py runserver
 [http://127.0.0.1:8000/](http://127.0.0.1:8000/)
